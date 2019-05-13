@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>Skrollr Demo</title>
+	<style>
+		body {			background-color: 	black; }
+		h1 {			color: 				white;
+						font-size:			4em; }
+		h2 {			color:				white; }
+		.centered {		position: 			absolute;
+						top: 				50%; }
+		#spacer1 {		height: 			800px; }
+		#spacer2 {		height: 			700px; }
+		#spacer3 {		height: 			700px; }
+	</style>
+	<script src="skrollr.min.js"></script>
+	<script>
+		function startSkrollr() {
+			skrollr.init({
+				//logs current scroll position
+				render: function(data) { console.log(data.curTop); }
+			});
+		}
+	</script>
+</head>
+<body onload="startSkrollr()" >
+<div id="wrapper">
+	<h1>Skrollr Demo</h1>
+	<h2>(Gotta scroll to make things happen &#8595)</h2>
+	<div id="spacer1"></div>
+	<h1 data-425-start="opacity: 0.0"
+		data-700-start="opacity: 1.0"
+		data-925-start="opacity: 0.0">
+		Fade in and out
+	</h1>
+	<div id="spacer2"></div>
+	<h1>
+		<span data-1000-start="color: rgb(255,0,0)"
+		data-1150-start="color: rgb(255,165,0)"
+		data-1300-start="color: rgb(255,255,0)"
+		data-1450-start="color: rgb(0,128,0)"
+		data-1600-start="color: rgb(0,0,255)"
+		data-1750-start="color: rgb(75,0,130)"
+		data-1900-start="color: rgb(238,130,238)">Ch</span><span 
+		data-1000-start="color: rgb(255,165,0)"
+		data-1150-start="color: rgb(255,255,0)"
+		data-1300-start="color: rgb(0,128,0)"
+		data-1450-start="color: rgb(0,0,255)"
+		data-1600-start="color: rgb(75,0,130)"
+		data-1750-start="color: rgb(238,130,238)"
+		data-1900-start="color: rgb(255,0,0)">an</span><span 
+		data-1000-start="color: rgb(75,0,130)"
+		data-1150-start="color: rgb(238,130,238)"
+		data-1300-start="color: rgb(255,0,0)"
+		data-1450-start="color: rgb(255,165,0)"
+		data-1600-start="color: rgb(255,255,0)"
+		data-1750-start="color: rgb(0,128,0)"
+		data-1900-start="color: rgb(0,0,255)">ge</span><span 
+		data-1000-start="color: rgb(75,0,130)"
+		data-1150-start="color: rgb(238,130,238)"
+		data-1300-start="color: rgb(0,0,255)"
+		data-1450-start="color: rgb(255,0,0)"
+		data-1600-start="color: rgb(255,165,0)"
+		data-1750-start="color: rgb(255,255,0)"
+		data-1900-start="color: rgb(0,128,0)"> Co</span><span 
+		data-1000-start="color: rgb(0,128,0)"
+		data-1150-start="color: rgb(0,0,255)"
+		data-1300-start="color: rgb(75,0,130)"
+		data-1450-start="color: rgb(238,130,238)"
+		data-1600-start="color: rgb(255,0,0)"
+		data-1750-start="color: rgb(255,165,0)"
+		data-1900-start="color: rgb(255,255,0)"
+		>lo</span><span 
+		data-1000-start="color: rgb(255,255,0)"
+		data-1150-start="color: rgb(0,128,0)"
+		data-1300-start="color: rgb(0,0,255)"
+		data-1450-start="color: rgb(75,0,130)"
+		data-1600-start="color: rgb(238,130,238)"
+		data-1750-start="color: rgb(255,0,0)"
+		data-1900-start="color: rgb(255,165,0)">rs</span>
+	</h1>
+	<div id="spacer3"></div>
+	<h1>Move Elements</h1>
+</div>
+</body>
+</html>

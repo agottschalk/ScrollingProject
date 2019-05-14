@@ -6,21 +6,35 @@
 		h1 {			color: 				white;
 						font-size:			4em; }
 		h2 {			color:				white; }
+		a:link {		color:				orange; }
+		a:visited {		color:				lightblue; }
 		.centered {		position: 			absolute;
 						top: 				50%; }
-		#spacer1 {		height: 			800px; }
-		#spacer2 {		height: 			700px; }
-		#spacer3 {		height: 			700px; }
-		#box {			height: 50px;
-						width: 50px;
-						background-color: pink;
-						position: relative; 
-						left: 500px; }
+		#spacer1 {		height: 			600px; }
+		#spacer2 {		height: 			600px; }
+		#spacer3 {		height: 			600px; }
+		#spacer4 {		height:				600px; }
+		#box {			height: 			50px;
+						width: 				50px;
+						background-color: 	pink;
+						position: 			relative; 
+						left: 				500px; }
+		#parallaxWrapper{background-image: 	url("black-and-white-black-and-white-garden-1563332.jpg");	/*Photo by Pablo Rodriguez from Pexels*/ 
+						background-attachment: fixed;
+						background-repeat:	no-repeat;
+						position:			relative;
+						bottom:				0px;
+						height:				1000px; }
+		#parallaxDiv {	position:			absolute;
+						top:				400px; }
+						
 	</style>
 	<script src="skrollr.min.js"></script>
 	<script>
 		function startSkrollr() {
 			skrollr.init({
+				smoothScrolling: true,
+				forceHeight: false,
 				render: function(data) { console.log(data.curTop); }, //logs current scroll position
 				easing: { sin: function(p) { return Math.sin((p/2)*Math.PI); }, cos: function(p) { return 1-(Math.cos((p/2)*Math.PI)); }}
 			});
@@ -30,13 +44,11 @@
 <body onload="startSkrollr()" >
 <div id="wrapper">
 	<h1>Skrollr Demo</h1>
-	<h2>(Gotta scroll to make things happen &#8595)</h2>
+	<h2>(Gotta scroll to make things happen &#8595 &#8595 &#8595)</h2>
 	<div id="spacer1"></div>
-	<h1 data-425-start="opacity: 0.0"
-		data-700-start="opacity: 1.0"
-		data-925-start="opacity: 0.0">
-		Fade in and out
-	</h1>
+	<h1 data-325-start="opacity: 0.0"
+		data-600-start="opacity: 1.0"
+		data-825-start="opacity: 0.0">Fade in and out</h1>
 	<div id="spacer2"></div>
 	<h1>
 		<span data-1000-start="color: hsl(0,100%,50%)"
@@ -84,11 +96,22 @@
 	</h1>
 	<div id="spacer3"></div>
 	<h1>Move Elements</h1>
-	<div id="box" 	data-2300-start="top[cos]: 0px; left[sin]: 300px;" 
-					data-2400-start="top[sin]: 100px; left[cos]: 200px"
-					data-2500-start="top[cos]: 200px; left[sin]: 300px;"
-					data-2600-start="top[sin]: 100px; left[cos]: 400px;"
-					data-2700-start="top[cos]: 0px; left[sin]: 300px;"></div>
+	<div id="box" 	data-1900-start="top[cos]: 0px; left[sin]: 300px;" 
+					data-2000-start="top[sin]: 100px; left[cos]: 200px"
+					data-2100-start="top[cos]: 200px; left[sin]: 300px;"
+					data-2200-start="top[sin]: 100px; left[cos]: 400px;"
+					data-2300-start="top[cos]: 0px; left[sin]: 300px;"></div>
+	<div id="spacer4"></div>
+	<h1>And finally...</h1>
+	<div id="parallaxWrapper"
+		data-2100="background-position: 50% 40%;"
+		data-3575="background-position: 50% 50%;">
+		<div id="parallaxDiv">
+		<h1>Parallax Scrolling!</h1>
+			<h2>Skrollr <a href="http://prinzhorn.github.io/skrollr/">demo</a> and <a href="https://github.com/Prinzhorn/skrollr">documentation</a></h2>
+			<h2><a href="https://ihatetomatoes.net/how-to-create-a-parallax-scrolling-website/">Tutorial</a> on how to create parallax scrolling pages with Skrollr</h2>
+		</div>
+	</div>
 </div>
 </body>
 </html>
